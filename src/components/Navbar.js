@@ -18,9 +18,6 @@ const Navbar = (props) => {
                                 <Link className="nav-link" to="/about">{props.aboutText}</Link>
                             </li>
                         </ul>
-                        <div className="d-flex">
-                            <div className="bg-primary rounded mx-2" style={{height: "30px", width: "30px"}} ></div>
-                        </div>
                         <form className="d-flex">
                             <div className="form-check form-switch">
                                 <input className="form-check-input" onClick={props.toggleMode} type="checkbox" id="flexSwitchCheckDefault" />

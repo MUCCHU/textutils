@@ -13,8 +13,7 @@ export default function TextForm(props) {
         props.showAlert("Converted to Lower case!", "success");
     }
     const handleCopy = (e)=>{
-        var text = document.getElementById("exampleFormControlTextarea1");
-        navigator.clipboard.writeText(text.value);
+        navigator.clipboard.writeText(Text);
         e.target.innerHTML = "Copied";
         props.showAlert("Copied to clipboard!", "success");
         setTimeout(() => {
@@ -52,8 +51,8 @@ export default function TextForm(props) {
         </div>
             <div className="container my-3" style={{ color: props.mode === "light" ? "black" : "white" }}>
             <h2>Your Text summary</h2>
-                <p>{Text.split(" ").filter((element)=>{ return element.length !== 0}).length} Words and {Text.length} characters </p>
-                <p>{0.08 * Text.split(" ").filter((element) => { return element.length !== 0 }).length} Minutes to read</p>
+                <p>{Text.split(/\s+/).filter((element)=>{ return element.length !== 0}).length} Words and {Text.length} characters </p>
+                <p>{0.08 * Text.split(/\s+/).filter((element) => { return element.length !== 0 }).length} Minutes to read</p>
                 <h2>Preview</h2>
                 <p>{Text.length > 0 ? Text: "Nothing to preview"}</p>
         </div>
